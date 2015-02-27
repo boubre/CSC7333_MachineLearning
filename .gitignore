@@ -9,3 +9,17 @@
 
 # RStudio files
 .Rproj.user/
+
+# C# User-specific files
+*.suo
+*.user
+*.sln.docstates
+ 
+# C# Build results
+ 
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
