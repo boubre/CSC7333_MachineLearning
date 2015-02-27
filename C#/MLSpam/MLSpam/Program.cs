@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace MLSpam
 {
@@ -10,10 +7,23 @@ namespace MLSpam
     {
         static void Main(string[] args)
         {
-            Console.Out.WriteLine("CSC 7333 Machine Learning Project");
+            Console.WriteLine("CSC 7333 Machine Learning Project");
 
-            Console.Out.WriteLine("Execution Complete.");
-            Console.In.ReadLine(); //Wait for enter to be pressed before exiting
+            uciSpamAnalysis();
+
+            Console.WriteLine("Execution Complete.");
+            Console.ReadLine(); //Wait for enter to be pressed before exiting
+        }
+
+        /// <summary>
+        /// Analyze and produce results for the UCI spam data set.
+        /// </summary>
+        private static void uciSpamAnalysis()
+        {
+            //Load Data
+            string dataLoc = Directory.GetCurrentDirectory() + "/UCIData/spambase.data";
+            string headerLoc = Directory.GetCurrentDirectory() + "/UCIData/spambase.names";
+            var dataLoader = new DataLoader(dataLoc, headerLoc);
         }
     }
 }

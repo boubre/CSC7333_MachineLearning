@@ -1,12 +1,12 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpC5User", "CSharpC5User\CSharpC5User.csproj", "{3FA04BA0-44A8-4C71-A6AB-F2B3B4D1DA26}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6FB6897E-2866-4E0A-A0FC-F833C66DF84B} = {6FB6897E-2866-4E0A-A0FC-F833C66DF84B}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C5Refactor", "C5Refactor\C5Refactor.vcproj", "{6FB6897E-2866-4E0A-A0FC-F833C66DF84B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C5Refactor", "C5Refactor\C5Refactor.vcxproj", "{6FB6897E-2866-4E0A-A0FC-F833C66DF84B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
