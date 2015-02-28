@@ -23,3 +23,6 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
+
+# Java binaries
+*.class
