@@ -29,7 +29,7 @@
 | UCI Machine Learning Repository: http://www.ics.uci.edu/~mlearn/MLRepository.html
 
 
-1, 0.    | spam, non-spam classes
+|1, 0.    | spam, non-spam classes
 
 word_freq_make:         continuous.
 word_freq_address:      continuous.
@@ -88,3 +88,4 @@ char_freq_#:            continuous.
 capital_run_length_average: continuous.
 capital_run_length_longest: continuous.
 capital_run_length_total:   continuous.
+class:					nominal.
