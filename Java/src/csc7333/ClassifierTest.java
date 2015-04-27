@@ -83,8 +83,10 @@ public abstract class ClassifierTest {
 		loader.getDataSet().forEach(u -> data.add(makeInstance(u)));
 		try{
 			Evaluation eval = new Evaluation(data);
+			long startTime = System.currentTimeMillis();
 			eval.crossValidateModel(classifier, data, 10, rand);
-			printResults(eval);
+			long endTime = System.currentTimeMillis();
+			printResults(eval, endTime - startTime);
 		} catch (Exception ex) {
 			System.err.println("Failed to train and test Naive Bayes on 10-fold cross validation data.");
 			ex.printStackTrace();
@@ -94,9 +96,11 @@ public abstract class ClassifierTest {
 	/**
 	 * Print the results of an evaluation to the output stream.
 	 * @param eval The evaluation.
+	 * @param runtime How long (in mSec) the evaluation took.
 	 * @throws Exception The class details string throws an exception.
 	 */
-	protected void printResults(Evaluation eval) throws Exception {
+	protected void printResults(Evaluation eval, long runtime) throws Exception {
+		output.println("Process runtime (milliSeconds): " + runtime);
 		output.println(eval.toSummaryString());
 		output.println(eval.toClassDetailsString());
 	}

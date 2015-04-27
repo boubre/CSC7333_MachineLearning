@@ -31,10 +31,12 @@ public class C45Test extends ClassifierTest {
 		loader.getDataSet().forEach(u -> trainingData.add(makeInstance(u)));
 		Classifier classifier = new J48();
 		try {
+			long startTime = System.currentTimeMillis();
 			classifier.buildClassifier(trainingData);
 			Evaluation test = new Evaluation(trainingData);
 			test.evaluateModel(classifier, trainingData);
-			printResults(test);
+			long endTime = System.currentTimeMillis();
+			printResults(test, endTime - startTime);
 		} catch (Exception ex) {
 			System.err.println("Failed to train and test C4.5 on all data.");
 			ex.printStackTrace();
