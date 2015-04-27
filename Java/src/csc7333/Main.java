@@ -47,7 +47,7 @@ public class Main {
 		output.println("C4.5 on 10-fold cross validation data:");
 		output.println("=======================================");
 		ClassifierTest c45 = new C45Test(dataLoader, output);
-		c45.crossValidate(new Random(RANDOM_SEED));;
+		c45.crossValidate(new Random(RANDOM_SEED));
 		
 		System.out.println("Running Naive Bayes 10-fold cross validation...");
 		//10-fold cross validation Naive Bayes
@@ -55,6 +55,30 @@ public class Main {
 		output.println("Naive Bayes on 10-fold cross validation data:");
 		output.println("=======================================");
 		ClassifierTest nbt = new NaiveBayesTest(dataLoader, output);
-		nbt.crossValidate(new Random(RANDOM_SEED));;
+		nbt.crossValidate(new Random(RANDOM_SEED));
+		
+		System.out.println("Running Bayes Net 10-fold cross validation...");
+		//10-fold cross validation Bayes Net
+		output.println("=======================================");
+		output.println("Bayes Net on 10-fold cross validation data:");
+		output.println("=======================================");
+		ClassifierTest bayesnet = new BayesNetTest(dataLoader, output);
+		bayesnet.crossValidate(new Random(RANDOM_SEED));
+		
+		System.out.println("Running AdaBoost 10-fold cross validation...");
+		//10-fold cross validation AdaBoost
+		output.println("=======================================");
+		output.println("AdaBoost on 10-fold cross validation data:");
+		output.println("=======================================");
+		ClassifierTest adaboost = new AdaBoostTest(dataLoader, output);
+		adaboost.crossValidate(new Random(RANDOM_SEED));
+		
+		System.out.println("Running Bagging 10-fold cross validation...");
+		//10-fold cross validation AdaBoost
+		output.println("=======================================");
+		output.println("Bagging on 10-fold cross validation data:");
+		output.println("=======================================");
+		ClassifierTest bagging = new BaggingTest(dataLoader, output);
+		bagging.crossValidate(new Random(RANDOM_SEED));
 	}
 }
