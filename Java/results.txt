@@ -1,7 +1,7 @@
 =======================================
 C4.5 on 10-fold cross validation data:
 =======================================
-Process runtime (milliSeconds): 11270
+Process runtime (milliSeconds): 6838
 
 Correctly Classified Instances        4265               92.6972 %
 Incorrectly Classified Instances       336                7.3028 %
@@ -19,10 +19,16 @@ Total Number of Instances             4601
                  0.899     0.055      0.915     0.899     0.907      0.944    Spam
 Weighted Avg.    0.927     0.083      0.927     0.927     0.927      0.944
 
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2636  152 |    a = Legit
+  184 1629 |    b = Spam
+
 =======================================
 Naive Bayes on 10-fold cross validation data:
 =======================================
-Process runtime (milliSeconds): 1253
+Process runtime (milliSeconds): 1123
 
 Correctly Classified Instances        3663               79.6131 %
 Incorrectly Classified Instances       938               20.3869 %
@@ -40,10 +46,16 @@ Total Number of Instances             4601
                  0.956     0.308      0.669     0.956     0.787      0.941    Spam
 Weighted Avg.    0.796     0.148      0.845     0.796     0.798      0.939
 
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1930  858 |    a = Legit
+   80 1733 |    b = Spam
+
 =======================================
 Bayes Net on 10-fold cross validation data:
 =======================================
-Process runtime (milliSeconds): 2499
+Process runtime (milliSeconds): 2530
 
 Correctly Classified Instances        4132               89.8066 %
 Incorrectly Classified Instances       469               10.1934 %
@@ -61,10 +73,16 @@ Total Number of Instances             4601
                  0.834     0.06       0.9       0.834     0.866      0.965    Spam
 Weighted Avg.    0.898     0.124      0.898     0.898     0.897      0.965
 
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2620  168 |    a = Legit
+  301 1512 |    b = Spam
+
 =======================================
 AdaBoost on 10-fold cross validation data:
 =======================================
-Process runtime (milliSeconds): 5931
+Process runtime (milliSeconds): 5757
 
 Correctly Classified Instances        4139               89.9587 %
 Incorrectly Classified Instances       462               10.0413 %
@@ -82,10 +100,16 @@ Total Number of Instances             4601
                  0.864     0.077      0.879     0.864     0.871      0.958    Spam
 Weighted Avg.    0.9       0.113      0.899     0.9       0.899      0.958
 
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2573  215 |    a = Legit
+  247 1566 |    b = Spam
+
 =======================================
 Bagging on 10-fold cross validation data:
 =======================================
-Process runtime (milliSeconds): 20815
+Process runtime (milliSeconds): 18496
 
 Correctly Classified Instances        4328               94.0665 %
 Incorrectly Classified Instances       273                5.9335 %
@@ -102,4 +126,10 @@ Total Number of Instances             4601
                  0.961     0.09       0.943     0.961     0.952      0.979    Legit
                  0.91      0.039      0.938     0.91      0.924      0.979    Spam
 Weighted Avg.    0.941     0.07       0.941     0.941     0.941      0.979
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2678  110 |    a = Legit
+  163 1650 |    b = Spam
 

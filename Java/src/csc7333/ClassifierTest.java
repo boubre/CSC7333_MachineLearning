@@ -103,5 +103,6 @@ public abstract class ClassifierTest {
 		output.println("Process runtime (milliSeconds): " + runtime);
 		output.println(eval.toSummaryString());
 		output.println(eval.toClassDetailsString());
+		output.println(eval.toMatrixString());
 	}
 }
