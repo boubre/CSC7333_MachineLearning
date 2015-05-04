@@ -1,0 +1,56 @@
+---
+title: "Feature Selection for Spam Database"
+author: "Ali & Zahra"
+date: "Monday, April 27, 2015"
+output: html_document
+---
+
+Here using the FSelector package, we want to find the most important attributes in the spam database.
+The criteria is the information gain approach: we choose the most informative inputs.
+Then we pick onlu 9 most important values, for training purposes:
+
+```{r,echo=FALSE}
+library('FSelector')
+################################
+######## WE USE ONLY the FIRST 2000 SAMPLES ###################
+spam_data<-read.csv(
+"D:/LSU/Spring 2015/Machine Learning/Project/R/spamtable.csv")
+input<-spam_data[,1:57]
+output<-spam_data[,58]
+######################################
+train.input<-input[1:2000,]
+train.output<-output[1:2000]
+##############################################
+######### ASSIGNING NAMES ############################
+train<-cbind(train.input,train.output)
+colnames(train)<-c("V1","V2","V3","V4","V5","V6","V7","V8",
+"V9","V10","V11","V12","V13","V14","V15","V16","V17","V18","V19","V20",
+"V21","V22","V23","V24","V25","V26","V27","V28","V29","V30","V31","V32",
+"V33","V34","V35","V36","V37","V38","V39","V40","V41","V42","V43","V44",
+"V45","V46","V47","V48","V49","V50","V51","V52","V53","V54","V55","V56",
+"V57","V58")
+####################################################3
+##### USING INFORMATON GAIN TO FIND 10 MOST IMPORTANT INPUTS ################
+importance <- information.gain(V58~.,train)
+#print(importance)
+best.attributes <- cutoff.k(importance,10)
+print(best.attributes)
+f <- as.simple.formula(best.attributes, "V58")
+print(f)
+```
+
+
+Let's try to see if we have similar results if we use gain ratio:
+
+```{r,echo=FALSE}
+importance <- gain.ratio(V58~.,train)
+#print(importance)
+best.attributes <- cutoff.k(importance,10)
+print(best.attributes)
+f <- as.simple.formula(best.attributes, "V58")
+print(f)
+```
+
+We use the subset selected in gain ratio approach to train our methods
+
+
